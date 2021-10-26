@@ -1,0 +1,405 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>2021 Calendar</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+	<body>
+		<div class="calendar">
+			<div class="col leftCol">
+				<div class="content">
+					<h1 id="current" class="date"><span></span></h1>
+					<div class="notes">
+						<ul class="noteList">
+							<li id="notes"><a href="#" title="Remove note" class="removeNote animate"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col rightCol">
+				<div class="content">
+					<h2 class="year">Year 2021</h2>
+					<ul id="month" class="months">
+						<li id="Jan" onclick="selectJan(this)"><a href="#" title="Jan" class="selected">Jan</a></li>
+						<li id="Feb" onclick="selectFeb(this)"><a href="#" title="Feb" >Feb</a></li>
+						<li id="Mar" onclick="selectMar(this)"><a href="#" title="Mar" >Mar</a></li>
+						<li id="Apr" onclick="selectApr(this)"><a href="#" title="Apr" >Apr</a></li>
+						<li id="May" onclick="selectMay(this)"><a href="#" title="May" >May</a></li>
+						<li id="Jun" onclick="selectJun(this)"><a href="#" title="Jun" >Jun</a></li>
+						<li id="Jul" onclick="selectJul(this)"><a href="#" title="Jul" >Jul</a></li>
+						<li id="Aug" onclick="selectAug(this)"><a href="#" title="Aug" >Aug</a></li>
+						<li id="Sep" onclick="selectSep(this)"><a href="#" title="Sep" >Sep</a></li>
+						<li id="Oct" onclick="selectOct(this)"><a href="#" title="Oct" >Oct</a></li>
+						<li id="Nov" onclick="selectNov(this)"><a href="#" title="Nov" >Nov</a></li>
+						<li id="Dec" onclick="selectDec(this)"><a href="#" title="Dec" >Dec</a></li>
+					</ul>
+					<script>
+						function clearSelect()
+						{
+							document.getElementById("Jan").innerHTML = '<li><a href="#" title="Jan" >Jan</a></li>';
+							document.getElementById("Feb").innerHTML = '<li><a href="#" title="Feb" >Feb</a></li>';
+							document.getElementById("Mar").innerHTML = '<li><a href="#" title="Mar" >Mar</a></li>';
+							document.getElementById("Apr").innerHTML = '<li><a href="#" title="Apr" >Apr</a></li>';
+							document.getElementById("May").innerHTML = '<li><a href="#" title="May" >May</a></li>';
+							document.getElementById("Jun").innerHTML = '<li><a href="#" title="Jun" >Jun</a></li>';
+							document.getElementById("Jul").innerHTML = '<li><a href="#" title="Jul" >Jul</a></li>';
+							document.getElementById("Aug").innerHTML = '<li><a href="#" title="Aug" >Aug</a></li>';
+							document.getElementById("Sep").innerHTML = '<li><a href="#" title="Sep" >Sep</a></li>';
+							document.getElementById("Oct").innerHTML = '<li><a href="#" title="Oct" >Oct</a></li>';
+							document.getElementById("Nov").innerHTML = '<li><a href="#" title="Nov" >Nov</a></li>';
+							document.getElementById("Dec").innerHTML = '<li><a href="#" title="Dec" >Dec</a></li>';
+						}				
+						function selectJan(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Jan" class="selected">Jan</a></li>';
+							//numDays(31,2,31,"Jan");
+							numDays(1,"Jan");
+						}
+						function selectFeb(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Feb" class="selected">Feb</a></li>';
+							//numDays(29,5,31,"Feb");
+							numDays(2,"Feb");
+						}
+						function selectMar(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Mar" class="selected">Mar</a></li>';
+							//numDays(31,6,29,"Mar");
+							numDays(3,"Mar");
+						}
+						function selectApr(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Apr" class="selected">Apr</a></li>';
+							//numDays(30,2,31,"Apr");
+							numDays(4,"Apr");
+						}
+						function selectMay(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="May" class="selected">May</a></li>';
+							//numDays(31,4,30,"May");
+							numDays(5,"May");
+						}
+						function selectJun(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Jun" class="selected">Jun</a></li>';
+							//numDays(30,0,30,"Jun");
+							numDays(6,"Jun");
+						}
+						function selectJul(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Jul" class="selected">Jul</a></li>';
+							//numDays(31,2,30,"Jul");
+							numDays(7,"Jul");
+						}
+						function selectAug(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Aug" class="selected">Aug</a></li>';
+							//numDays(31,5,31,"Aug");
+							numDays(8,"Aug");
+						}
+						function selectSep(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Sep" class="selected">Sep</a></li>';
+							//numDays(30,1,31,"Sep");
+							numDays(9,"Sep");
+						}
+						function selectOct(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Oct" class="selected">Oct</a></li>';
+							//numDays(31,3,30,"Oct");
+							numDays(10,"Oct");
+						}
+						function selectNov(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Nov" class="selected">Nov</a></li>';
+							//numDays(30,6,31,"Nov");
+							numDays(11,"Nov");
+						}
+						function selectDec(e)
+						{
+							clearSelect();
+							e.innerHTML='<li><a href="#" title="Dec" class="selected">Dec</a></li>';
+							//numDays(31,1,30,"Dec");
+							numDays(12,"Dec");
+						}
+					</script>
+					<div class="clearfix"></div>
+					<ul class="weekday">
+                        <li><a href="#" title="Sun" data-value="7">Sun</a></li>
+						<li><a href="#" title="Mon" data-value="1">Mon</a></li>
+						<li><a href="#" title="Tue" data-value="2">Tue</a></li>
+						<li><a href="#" title="Wed" data-value="3">Wed</a></li>
+						<li><a href="#" title="Thu" data-value="4">Thu</a></li>
+						<li><a href="#" title="Fri" data-value="5">Fri</a></li>
+						<li><a href="#" title="Say" data-value="6">Sat</a></li>
+
+					</ul>
+					<div class="clearfix"></div>
+					<ul id="day" class="days">
+						<script>
+							function numDays(monthNum,month)
+							{
+								
+								//[MonthNumber(1 to 12)][NumberOfDaysThisMonth, DaysOfGapFromLastMonth, NumberOfDaysLastMonth]
+								var values=[[31,5,31],[28,1,31],[31,1,28],[30,4,31],[31,6,30],[30,2,31],[31,4,30],[31,0,31],[30,3,31],[31,5,30],[30,1,31],[31,3,30]];
+								total = values[monthNum-1][0]; gap = values[monthNum-1][1]; prev = values[monthNum-1][2];
+						
+								prev = prev-gap+1;
+								days = total+gap;
+								week = ['MON','TUE','WED','THU','FRI','SAT','SUN','MON'];
+								var selectLn= '';
+								for (var x = 1; x <= gap; x += 1)
+								{
+									 selectLn= selectLn+'<li class="disabled" ><a href="#" title="'+prev+'" class="previous">'+prev+'</a></li>';
+									prev += 1;
+								}
+								for (var y = 1; y <= total; y += 1 )
+								{
+									index = y%7+gap-1;
+									if (index > 7){
+										index -= 7;}
+									selected = checkSelect(month,y,0);
+									if (selected == true)
+									{
+										selectLn= selectLn+'<li id="'+week[index]+':'+month+':'+y+'" onclick="currentDate(this)"><a href="#" title="'+y+'" class="event">'+y+'</a></li>';
+									}
+									else 
+									{
+										selectLn= selectLn+'<li id="'+week[index]+':'+month+':'+y+'" onclick="currentDate(this)"><a href="#" title="'+y+'">'+y+'</a></li>';
+									}
+									
+								}
+								for (var z = 1; days <= 41; z += 1 )
+								{
+									selectLn= selectLn+'<li class="disabled"><a href="#" title="'+z+'" class="previous">'+z+'</a></li>';
+									days += 1;
+								}
+								//console.log(selectLn);
+								document.getElementById("day").innerHTML = selectLn;
+							}
+							
+							function checkSelect(m,d)
+							{
+								switch (m+d)
+								{
+									case ("Jan1"):
+										return true;
+										case ("Feb12"):
+										return true;
+										case ("Feb25"):
+										return true;
+										case ("Apr1"):
+										return true;
+										case ("Apr2"):
+										return true;
+										case ("Apr3"):
+										return true;
+										case ("Apr4"):
+										return true;
+										case ("May1"): 
+										return true;
+										case ("May13"):
+										return true;
+										case ("Jun12"):
+										return true;
+										case ("Jul20"):
+										return true;
+										case ("Aug21"):
+										return true;
+										case ("Aug30"):
+										return true;
+										case ("Nov1"):
+										return true;
+										case ("Nov30"):
+										return true;
+										case ("Dec8"):
+										return true;
+									    case ("Dec25"):
+										return true;
+								        case ("Dec30"):
+								        return true;
+								}
+							}
+							function getDescription(m,d)
+							{
+                                var str1 = "New Year's Eve";
+                                var str2 = "Chinese New Year"
+                                var str3 = "Edsa People Power Revolution"
+                                var str4 = "Maundy Thursday"
+                                var str5 = "Good Friday"
+                                var str6 = "Black Saturday"
+                                var str7 = "Easter Sunday"
+                                var str8 = "Labor Day"
+                                var str9 = "Eidul-Fitar"
+                                var str10 = "Independence Day"
+                                var str11 = "Eid Al-Adha"
+                                var str12 = "Ninoy Aquino Day"
+                                var str13 = "National Heroes Day"
+                                var str14 = "All Saints Day"
+                                var str15 = "Bonifacion Day"
+                                var str16 = "Feast of the Immaculate"
+                                var str17 = "Christmas Day"
+                                var str18 = "Rizal Day"
+
+                                var newyear = str1.link("https://en.wikipedia.org/wiki/New_Year%27s_Day");
+                                var cyear = str2.link("https://en.wikipedia.org/wiki/Chinese_New_Year");
+                                var edsa = str3.link("https://en.wikipedia.org/wiki/People_Power_Revolution");
+                                var maundy = str4.link("https://en.wikipedia.org/wiki/Maundy_Thursday");
+                                var good = str5.link("https://en.wikipedia.org/wiki/Good_Friday");
+                                var black = str6.link("https://en.wikipedia.org/wiki/Holy_Saturday");
+                                var easter = str7.link("https://en.wikipedia.org/wiki/Easter");
+                                var labor = str8.link("https://publicholidays.ph/labor-day/");
+                                var eidul = str9.link("https://www.officeholidays.com/holidays/philippines/eid-al-fitr");
+                                var indep = str10.link("https://en.wikipedia.org/wiki/Independence_Day_(Philippines)");
+                                var adha = str11.link("https://en.wikipedia.org/wiki/Eid_al-Adha");
+                                var ninoy = str12.link("https://en.wikipedia.org/wiki/Ninoy_Aquino_Day");
+                                var national = str13.link("https://en.wikipedia.org/wiki/Heroes%27_Day");
+                                var saints = str14.link("https://en.wikipedia.org/wiki/All_Saints%27_Day");
+                                var boni = str15.link("https://en.wikipedia.org/wiki/Bonifacio_Day");
+                                var feast = str16.link("https://en.wikipedia.org/wiki/Feast_of_the_Immaculate_Conception");
+                                var xmas = str17.link("https://en.wikipedia.org/wiki/Christmas");
+                                var rizal =str18.link("https://en.wikipedia.org/wiki/Rizal_Day");
+								switch (m+d)
+								{
+									case ("Jan1"):
+									return newyear;
+									case ("Feb12"):
+									return cyear;
+                                    case ("Feb25"):
+									return edsa;
+									case ("Apr1"):
+									return maundy;
+									case ("Apr2"):
+									return good;
+                                    case ("Apr3"):
+                                    return black;
+									case ("Apr4"):
+									return easter;
+									case ("May1"):
+									return labor;
+									case ("May13"):
+									return eidul;
+									case ("Jun12"):
+									return indep;
+									case ("Jul20"):
+									return adha;
+									case ("Aug21"):
+									return ninoy;
+									case ("Aug30"):
+									return national;
+									case ("Nov1"):
+									return saints;
+									case ("Nov30"):
+									return boni;
+                                    case ("Dec8"):
+									return feast;
+									case ("Dec25"):	
+									return xmas;
+									case ("Dec30"):
+									return rizal;
+
+								}
+							}
+							
+							function currentDate(e)
+							{
+								try {
+									if (checkSelect(prevMonth,prevDay)==true)
+										{document.getElementById(prevID).innerHTML = '<a href="#" title="'+prevDay+'" class="event">'+prevDay+'</a>';}	
+									else {document.getElementById(prevID).innerHTML = '<a href="#" title="'+prevDay+'">'+prevDay+'</a>';}}
+								catch {}
+								
+								info = e.id.split(":");
+								//Info Array Guide:
+								//Info = [Week,Month,Day]
+								currentMonth=info[1];
+								day = info[2];
+								numb = 1;
+								if (checkSelect(currentMonth,day)==true)
+								{
+									document.getElementById("notes").innerHTML = getDescription(currentMonth,day)+'<a onclick="delNote(this)" href="#" title="Remove note" class="removeNote animate"></a>';
+								}
+								else
+								{
+									document.getElementById("notes").innerHTML = 'No Events<a onclick="delNote(this)" href="#" title="Remove note" class="removeNote animate"></a>';
+								}
+								switch (info[0])
+								{
+									case 'MON':
+										week = 'Monday';break;
+									case 'TUE':
+										week = 'Tuesday';break;
+									case 'WED':
+										week = 'Wednesday';break;
+									case 'THU':
+										week = 'Thursday';break;
+									case 'FRI':
+										week = 'Friday';break;
+									case 'SAT':
+										week = 'Saturday';break;
+									case 'SUN':
+										week = 'Sunday';break;
+								}
+								switch (currentMonth)
+								{
+									case "Jan":
+										month = "January";numb=1;break;
+									case "Feb":
+										month = "February";numb=2;break;
+									case "Mar":
+										month = "March";numb=3;break;
+									case "Apr":
+										month = "April";numb=4;break;
+									case "May":
+										month = "May";numb=5;break;
+									case "Jun":
+										month = "June";numb=6;break;
+									case "Jul":
+										month = "July";numb=7;break;
+									case "Aug":
+										month = "August";numb=8;break;
+									case "Sep":
+										month = "September";numb=9;break;
+									case "Oct":
+										month = "October";numb=10;break;
+									case "Nov":
+										month = "November";numb=11;break;
+									case "Dec":
+										month = "December";numb=12;break;
+								}
+
+								e.innerHTML = '<a href="#" class="selected" title="'+e.innerText+'">'+e.innerText+'</a>';
+								console.log(e.innerHTML);
+								document.getElementById("current").innerHTML = week+'<span>'+month+' '+day+'</span>';
+								
+								prevDay=e.innerText;
+								prevID=e.id;
+								prevMonth=currentMonth;
+							}
+							
+							numDays(1,"Jan");
+							
+						</script>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+		</div>
+	</body>
+</html>
