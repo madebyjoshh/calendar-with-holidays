@@ -1,2 +1,2 @@
 # calendar-with-holidays
-dynamic calendar using html css javascript 
+dynamic calendar using html css javascript, used for college project
